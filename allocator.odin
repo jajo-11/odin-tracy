@@ -27,6 +27,8 @@ TrackedAllocator :: proc(
 			new_memory, error := self.backing_allocator.procedure(self.backing_allocator.data, mode, size, alignment, old_memory, old_size, location);
 			if error == .None {
 				switch mode {
+				case .Alloc_Non_Zeroed:
+					fallthrough
 				case .Alloc:
 					if new_memory != nil {
 						if self.callstack_enable {

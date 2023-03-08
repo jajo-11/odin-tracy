@@ -1,7 +1,6 @@
 package tracy;
 
 import "core:c";
-import "core:strings";
 
 Enabled            :: #config(TRACY_ENABLE, false);
 SourceLocationData :: ___tracy_source_location_data;
